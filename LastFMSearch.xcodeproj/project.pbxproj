@@ -9,12 +9,25 @@
 /* Begin PBXBuildFile section */
 		02513FEC23C6162B00054BA0 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02513FEB23C6162B00054BA0 /* AppDelegate.swift */; };
 		02513FEE23C6162B00054BA0 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02513FED23C6162B00054BA0 /* SceneDelegate.swift */; };
-		02513FF023C6162B00054BA0 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02513FEF23C6162B00054BA0 /* ViewController.swift */; };
+		02513FF023C6162B00054BA0 /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 02513FEF23C6162B00054BA0 /* MainViewController.swift */; };
 		02513FF323C6162B00054BA0 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02513FF123C6162B00054BA0 /* Main.storyboard */; };
 		02513FF623C6162B00054BA0 /* LastFMSearch.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 02513FF423C6162B00054BA0 /* LastFMSearch.xcdatamodeld */; };
 		02513FF823C6162F00054BA0 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 02513FF723C6162F00054BA0 /* Assets.xcassets */; };
 		02513FFB23C6162F00054BA0 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 02513FF923C6162F00054BA0 /* LaunchScreen.storyboard */; };
 		0251400623C6163000054BA0 /* LastFMSearchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0251400523C6163000054BA0 /* LastFMSearchTests.swift */; };
+		0251401823C6191200054BA0 /* Album.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0251401723C6191200054BA0 /* Album.swift */; };
+		0251401A23C6191A00054BA0 /* Song.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0251401923C6191A00054BA0 /* Song.swift */; };
+		0251401C23C6193300054BA0 /* Artist.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0251401B23C6193300054BA0 /* Artist.swift */; };
+		0251401E23C61A0300054BA0 /* APIManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0251401D23C61A0300054BA0 /* APIManager.swift */; };
+		0251402023C61BE600054BA0 /* ViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0251401F23C61BE600054BA0 /* ViewModel.swift */; };
+		0251402723C61C5500054BA0 /* SongTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0251402523C61C5500054BA0 /* SongTableCell.swift */; };
+		0251402823C61C5500054BA0 /* SongTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0251402623C61C5500054BA0 /* SongTableCell.xib */; };
+		0251402B23C61C6B00054BA0 /* AlbumTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0251402923C61C6B00054BA0 /* AlbumTableCell.swift */; };
+		0251402C23C61C6B00054BA0 /* AlbumTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0251402A23C61C6B00054BA0 /* AlbumTableCell.xib */; };
+		0251402F23C61C7D00054BA0 /* ArtistTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0251402D23C61C7D00054BA0 /* ArtistTableCell.swift */; };
+		0251403023C61C7D00054BA0 /* ArtistTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0251402E23C61C7D00054BA0 /* ArtistTableCell.xib */; };
+		0251403223C61CD200054BA0 /* LastFMService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0251403123C61CD200054BA0 /* LastFMService.swift */; };
+		0251403423C61CEE00054BA0 /* CoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0251403323C61CEE00054BA0 /* CoreManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -31,7 +44,7 @@
 		02513FE823C6162B00054BA0 /* LastFMSearch.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LastFMSearch.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		02513FEB23C6162B00054BA0 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		02513FED23C6162B00054BA0 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		02513FEF23C6162B00054BA0 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		02513FEF23C6162B00054BA0 /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		02513FF223C6162B00054BA0 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		02513FF523C6162B00054BA0 /* LastFMSearch.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = LastFMSearch.xcdatamodel; sourceTree = "<group>"; };
 		02513FF723C6162F00054BA0 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -40,6 +53,19 @@
 		0251400123C6162F00054BA0 /* LastFMSearchTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = LastFMSearchTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		0251400523C6163000054BA0 /* LastFMSearchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastFMSearchTests.swift; sourceTree = "<group>"; };
 		0251400723C6163000054BA0 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		0251401723C6191200054BA0 /* Album.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Album.swift; sourceTree = "<group>"; };
+		0251401923C6191A00054BA0 /* Song.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Song.swift; sourceTree = "<group>"; };
+		0251401B23C6193300054BA0 /* Artist.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Artist.swift; sourceTree = "<group>"; };
+		0251401D23C61A0300054BA0 /* APIManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIManager.swift; sourceTree = "<group>"; };
+		0251401F23C61BE600054BA0 /* ViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewModel.swift; sourceTree = "<group>"; };
+		0251402523C61C5500054BA0 /* SongTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SongTableCell.swift; sourceTree = "<group>"; };
+		0251402623C61C5500054BA0 /* SongTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = SongTableCell.xib; sourceTree = "<group>"; };
+		0251402923C61C6B00054BA0 /* AlbumTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumTableCell.swift; sourceTree = "<group>"; };
+		0251402A23C61C6B00054BA0 /* AlbumTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = AlbumTableCell.xib; sourceTree = "<group>"; };
+		0251402D23C61C7D00054BA0 /* ArtistTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistTableCell.swift; sourceTree = "<group>"; };
+		0251402E23C61C7D00054BA0 /* ArtistTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArtistTableCell.xib; sourceTree = "<group>"; };
+		0251403123C61CD200054BA0 /* LastFMService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastFMService.swift; sourceTree = "<group>"; };
+		0251403323C61CEE00054BA0 /* CoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -81,14 +107,16 @@
 		02513FEA23C6162B00054BA0 /* LastFMSearch */ = {
 			isa = PBXGroup;
 			children = (
+				0251401523C6167C00054BA0 /* Model */,
+				0251401423C6167400054BA0 /* ViewModel */,
+				0251401323C6166E00054BA0 /* View */,
+				0251401223C6166600054BA0 /* ViewController */,
+				0251401623C6168400054BA0 /* Storyboard */,
+				0251401123C6165C00054BA0 /* Services */,
+				0251401023C6165300054BA0 /* Extensions */,
 				02513FEB23C6162B00054BA0 /* AppDelegate.swift */,
 				02513FED23C6162B00054BA0 /* SceneDelegate.swift */,
-				02513FEF23C6162B00054BA0 /* ViewController.swift */,
-				02513FF123C6162B00054BA0 /* Main.storyboard */,
-				02513FF723C6162F00054BA0 /* Assets.xcassets */,
-				02513FF923C6162F00054BA0 /* LaunchScreen.storyboard */,
 				02513FFC23C6162F00054BA0 /* Info.plist */,
-				02513FF423C6162B00054BA0 /* LastFMSearch.xcdatamodeld */,
 			);
 			path = LastFMSearch;
 			sourceTree = "<group>";
@@ -100,6 +128,73 @@
 				0251400723C6163000054BA0 /* Info.plist */,
 			);
 			path = LastFMSearchTests;
+			sourceTree = "<group>";
+		};
+		0251401023C6165300054BA0 /* Extensions */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Extensions;
+			sourceTree = "<group>";
+		};
+		0251401123C6165C00054BA0 /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				0251401D23C61A0300054BA0 /* APIManager.swift */,
+				0251403123C61CD200054BA0 /* LastFMService.swift */,
+				0251403323C61CEE00054BA0 /* CoreManager.swift */,
+			);
+			path = Services;
+			sourceTree = "<group>";
+		};
+		0251401223C6166600054BA0 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				02513FEF23C6162B00054BA0 /* MainViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		0251401323C6166E00054BA0 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				02513FF723C6162F00054BA0 /* Assets.xcassets */,
+				0251402523C61C5500054BA0 /* SongTableCell.swift */,
+				0251402623C61C5500054BA0 /* SongTableCell.xib */,
+				0251402923C61C6B00054BA0 /* AlbumTableCell.swift */,
+				0251402A23C61C6B00054BA0 /* AlbumTableCell.xib */,
+				0251402D23C61C7D00054BA0 /* ArtistTableCell.swift */,
+				0251402E23C61C7D00054BA0 /* ArtistTableCell.xib */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		0251401423C6167400054BA0 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				0251401F23C61BE600054BA0 /* ViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		0251401523C6167C00054BA0 /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				02513FF423C6162B00054BA0 /* LastFMSearch.xcdatamodeld */,
+				0251401723C6191200054BA0 /* Album.swift */,
+				0251401923C6191A00054BA0 /* Song.swift */,
+				0251401B23C6193300054BA0 /* Artist.swift */,
+			);
+			path = Model;
+			sourceTree = "<group>";
+		};
+		0251401623C6168400054BA0 /* Storyboard */ = {
+			isa = PBXGroup;
+			children = (
+				02513FF123C6162B00054BA0 /* Main.storyboard */,
+				02513FF923C6162F00054BA0 /* LaunchScreen.storyboard */,
+			);
+			path = Storyboard;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -186,6 +281,9 @@
 				02513FFB23C6162F00054BA0 /* LaunchScreen.storyboard in Resources */,
 				02513FF823C6162F00054BA0 /* Assets.xcassets in Resources */,
 				02513FF323C6162B00054BA0 /* Main.storyboard in Resources */,
+				0251403023C61C7D00054BA0 /* ArtistTableCell.xib in Resources */,
+				0251402C23C61C6B00054BA0 /* AlbumTableCell.xib in Resources */,
+				0251402823C61C5500054BA0 /* SongTableCell.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -203,10 +301,20 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				02513FF023C6162B00054BA0 /* ViewController.swift in Sources */,
+				0251403423C61CEE00054BA0 /* CoreManager.swift in Sources */,
+				0251402B23C61C6B00054BA0 /* AlbumTableCell.swift in Sources */,
+				0251401E23C61A0300054BA0 /* APIManager.swift in Sources */,
+				0251402023C61BE600054BA0 /* ViewModel.swift in Sources */,
+				0251401A23C6191A00054BA0 /* Song.swift in Sources */,
+				02513FF023C6162B00054BA0 /* MainViewController.swift in Sources */,
 				02513FEC23C6162B00054BA0 /* AppDelegate.swift in Sources */,
 				02513FF623C6162B00054BA0 /* LastFMSearch.xcdatamodeld in Sources */,
 				02513FEE23C6162B00054BA0 /* SceneDelegate.swift in Sources */,
+				0251401823C6191200054BA0 /* Album.swift in Sources */,
+				0251403223C61CD200054BA0 /* LastFMService.swift in Sources */,
+				0251402723C61C5500054BA0 /* SongTableCell.swift in Sources */,
+				0251401C23C6193300054BA0 /* Artist.swift in Sources */,
+				0251402F23C61C7D00054BA0 /* ArtistTableCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -369,6 +477,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z6HYJ5UY9Q;
 				INFOPLIST_FILE = LastFMSearch/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -387,6 +496,7 @@
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = Z6HYJ5UY9Q;
 				INFOPLIST_FILE = LastFMSearch/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
