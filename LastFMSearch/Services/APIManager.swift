@@ -20,14 +20,15 @@ struct APIManager {
     
     //let apiKey = "" // HIDE
     let key = apiKey
-    let root = "http://ws.audioscrobbler.com/2.0/?method="
+    let root = "https://ws.audioscrobbler.com/2.0/?method="
     let searchAlbum = "album.search&album="
     let searchArtist = "artist.search&artist="
     let searchTrack = "track.search&track="
     let apiLookup = "&api_key="
     let format = "&format=json"
     
-    var search: String!     // user's search query
+//    var search: String!     // user's search query
+    var search = "believe"  // test
     
     var albumName: String!
     var albumID: Int!       // CHECK JSON for type
@@ -41,7 +42,8 @@ struct APIManager {
     //MARK: - Initializer
     
     init(_ search: String? = nil) {
-        self.search = search
+//        self.search = search
+        self.search = search!
     }
     
     // MARK: - URLS

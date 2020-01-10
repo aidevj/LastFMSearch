@@ -34,10 +34,29 @@ class ViewModel {
             delegate?.update()
         }
     }
+    
+    var currentAlbum: Album! {
+        didSet {
+            tracks = []
+        }
+    }
 }
 
 extension ViewModel {
-    func get (_ albumName: String) {
-        //TODO
+    func getAlbums(_ search: String) {
+        
+        LastFM.getAlbum(for: search) { [weak self] result in
+            switch result {
+            case .success(let albums):
+                self?.albums = albums
+                print("Album count: \(albums.count)")
+            case .failure(let error):
+                print("Last FM error: \(error.localizedDescription)")       // THIS IS HAPPENING
+            }
+        }
+    }
+    
+    func getTracks(for id: Int) {
+        //LastFM.getTracks
     }
 }

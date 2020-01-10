@@ -41,6 +41,17 @@ class Album: Decodable {
     let name: String
     let artist: String  // maybe use class Artist instead???
     let url: String
-    let image: Image
+    //let image: Image                  // SOURCE OF ERROR!!! IMAGE IS PARSED WRONG
     let mbid: String    //! ID assigned by Last FM
+}
+
+
+// PUBLIC, USE ACROSS MODEL
+struct Image: Decodable {
+    
+    let url: String
+    
+    private enum CodingKeys: String, CodingKey {
+        case url = "#text"
+    }
 }

@@ -46,7 +46,8 @@ final class LastFMService {
                     let albums = response.albumResults.albumMatches.albums
                     completion(.success(albums))
                 } catch {
-                    completion(.failure(.badDataTask(error.localizedDescription)))
+                    completion(.failure(.badDataTask(error.localizedDescription)))      // THIS IS HAPPENING?
+                                                                                        //(LastFMSearch.LastFMError error 1.)
                     return
                 }
             }

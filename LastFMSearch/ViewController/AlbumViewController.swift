@@ -12,6 +12,8 @@ import UIKit
 
 class AlbumViewController: UIViewController {
 
+    var viewModel: ViewModel!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 

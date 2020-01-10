@@ -45,12 +45,3 @@ class Artist: Decodable {
 }
 
 
-// PUBLIC, USE ACROSS MODEL
-struct Image: Decodable {
-    
-    let url: String
-    
-    private enum CodingKeys: String, CodingKey {
-        case url = "#text"
-    }
-}
