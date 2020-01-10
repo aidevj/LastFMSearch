@@ -1,5 +1,5 @@
 //
-//  AlbumTableCell.swift
+//  SongTableCell.swift
 //  LastFMSearch
 //
 //  Created by Consultant on 1/8/20.
@@ -8,21 +8,17 @@
 
 import UIKit
 
-class AlbumTableCell: UITableViewCell {
+class TrackTableCell: UITableViewCell {
     
     //MARK: - IBOutlets
     @IBOutlet weak var albumImageView: UIImageView!
-    @IBOutlet weak var titleLabel: UILabel!
+    @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var artistLabel: UILabel!
-    @IBOutlet weak var tracksLabel: UILabel!
     
-    static let identifier = "AlbumTableCell"
-    
-    //var album = Album!
+    static let identifier = "SongTableCell"
     
     override func awakeFromNib() {
         super.awakeFromNib()
-        // Initialization code
     }
     
 }

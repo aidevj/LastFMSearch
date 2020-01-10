@@ -19,6 +19,10 @@
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="CSZ-GN-mF4">
                                 <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <connections>
+                                    <outlet property="dataSource" destination="BYZ-38-t0r" id="SbS-SF-PbD"/>
+                                    <outlet property="delegate" destination="BYZ-38-t0r" id="fZb-Xg-G8Z"/>
+                                </connections>
                             </tableView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
@@ -30,10 +34,55 @@
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
+                    <connections>
+                        <outlet property="mainTableView" destination="CSZ-GN-mF4" id="xU2-bF-XYB"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="139" y="98"/>
+        </scene>
+        <!--Artist View Controller-->
+        <scene sceneID="7nG-WZ-oNl">
+            <objects>
+                <viewController storyboardIdentifier="ArtistViewController" id="bMX-bk-MYU" customClass="ArtistViewController" customModule="LastFMSearch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="spx-Ji-Xk0">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="m3F-WW-Sd3"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="KRe-6o-wc3" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1110" y="413"/>
+        </scene>
+        <!--Album View Controller-->
+        <scene sceneID="klq-81-bHm">
+            <objects>
+                <viewController storyboardIdentifier="AlbumViewController" id="33N-0N-L98" customClass="AlbumViewController" customModule="LastFMSearch" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="sTi-h8-PdX">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="b2t-Jd-fOS">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                            </tableView>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <constraints>
+                            <constraint firstItem="5wO-nR-xb2" firstAttribute="trailing" secondItem="b2t-Jd-fOS" secondAttribute="trailing" id="P0f-I2-EqH"/>
+                            <constraint firstItem="b2t-Jd-fOS" firstAttribute="leading" secondItem="5wO-nR-xb2" secondAttribute="leading" id="Pgb-3z-xKV"/>
+                            <constraint firstItem="b2t-Jd-fOS" firstAttribute="top" secondItem="5wO-nR-xb2" secondAttribute="top" id="ZRN-aF-pUe"/>
+                            <constraint firstItem="5wO-nR-xb2" firstAttribute="bottom" secondItem="b2t-Jd-fOS" secondAttribute="bottom" id="bMK-sO-Oie"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="5wO-nR-xb2"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="Bly-yB-SIS" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1111" y="-266"/>
         </scene>
     </scenes>
 </document>

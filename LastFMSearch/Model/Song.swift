@@ -1,5 +1,5 @@
 //
-//  Song.swift
+//  Track.swift
 //  LastFMSearch
 //
 //  Created by Consultant on 1/8/20.
@@ -7,3 +7,12 @@
 //
 
 import Foundation
+
+struct TrackResults: Decodable {
+    let results: [Track]
+}
+
+class Track: Decodable {
+    // TODO
+}
+
