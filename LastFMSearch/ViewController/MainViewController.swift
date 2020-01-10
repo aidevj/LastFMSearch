@@ -120,23 +120,32 @@ extension MainViewController: UITableViewDataSource {
 extension MainViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
-        return 95
+        return UITableView.automaticDimension
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+       
         tableView.deselectRow(at: indexPath, animated: true)
         
-//        let album = viewModel.albums[indexPath.row]
-//        let artist = viewModel.artists[indexPath.row]
-        
-//        viewModel.currentAlbum = album
-//        let albumVC = storyboard?.instantiateViewController(withIdentifier: "AlbumViewController") as! AlbumViewController
-//        albumVC.viewModel = viewModel
-//        albumVC.hidesBottomBarWhenPushed = true
-        
-        
-//        navigationController?.view.backgroundColor = .white
-//        navigationController?.pushViewController(albumVC, animated: true)
+        switch indexPath.section {
+        case 0:
+            let album = viewModel.albums[indexPath.row]
+            viewModel.currentAlbum = album      // will retain after leaving that storyboard?
+        case 1:
+            let artist = viewModel.artists[indexPath.row]
+            viewModel.currentArtist = artist
+        case 2:
+            let track = viewModel.tracks[indexPath.row]
+            viewModel.currentTrack = track
+        default:
+            break
+        }
+
+        let detailsVC = storyboard?.instantiateViewController(withIdentifier: "DetailsViewController") as! DetailsViewController
+        detailsVC.viewModel = viewModel
+        detailsVC.hidesBottomBarWhenPushed = true
+        navigationController?.view.backgroundColor = .white
+        navigationController?.pushViewController(detailsVC, animated: true)
     }
 }
 

@@ -13,9 +13,14 @@ protocol ViewModelDelegate: class {
     func update()
 }
 
+protocol DetailsDelegate: class {
+    func update()
+}
+
 class ViewModel {
     
     weak var delegate: ViewModelDelegate?
+    weak var detailsDelegate: DetailsDelegate?
     
     var albums = [Album]() {
         didSet {
@@ -40,6 +45,10 @@ class ViewModel {
             tracks = []
         }
     }
+    
+    var currentArtist: Artist!
+    
+    var currentTrack: Track!
 }
 
 extension ViewModel {
