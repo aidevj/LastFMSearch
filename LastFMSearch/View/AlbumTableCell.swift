@@ -24,13 +24,13 @@ class AlbumTableCell: UITableViewCell {
             titleLabel.text = album.name
             artistLabel.text = album.artist
             //tracksLabel.text = "\()"
-//            guard let albumImageUrl = URL(string: album.image.url) else { return }
-//
-//            albumImageUrl.getImage { [ weak self ] img in
-//                if let image = img {
-//                    self?.albumImageView.image = image
-//                }
-//            }
+            guard let albumImageUrl = URL(string: album.image[0].url) else { return }
+
+            albumImageUrl.getImage { [ weak self ] img in
+                if let image = img {
+                    self?.albumImageView.image = image
+                }
+            }
         }
     }
     
