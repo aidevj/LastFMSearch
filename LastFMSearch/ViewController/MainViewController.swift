@@ -39,8 +39,8 @@ class MainViewController: UIViewController {
         
         // MANUAL TEST:
         //viewModel.getAlbums("Believe")
-        viewModel.getArtists("Cher")
-        //viewModel.getAlbums("Believe")
+        //viewModel.getArtists("Cher")
+        viewModel.getTracks("Believe")
     }
     
     // Helper function to set up Search Controller
@@ -66,7 +66,7 @@ extension MainViewController: UITableViewDataSource {
     
     // Set up rows in each section
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.artists.count
+        return viewModel.tracks.count
 //        switch section {
 //        case 0:
 //            return viewModel.albums.count
@@ -80,9 +80,9 @@ extension MainViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: ArtistTableCell.identifier, for: indexPath) as! ArtistTableCell
-        let artist = viewModel.artists[indexPath.row]
-        cell.artist = artist
+        let cell = tableView.dequeueReusableCell(withIdentifier: TrackTableCell.identifier, for: indexPath) as! TrackTableCell
+        let track = viewModel.tracks[indexPath.row]
+        cell.track = track
         return cell
 //        switch indexPath.section {
 //        case 0:

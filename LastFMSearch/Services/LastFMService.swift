@@ -84,5 +84,28 @@ final class LastFMService {
     
     //MARK: - Get Tracks URL Session
     
-    //TODO
+    func getTrack(for search: String, completion: @escaping TrackHandler) {
+        guard let url = APIManager(search).tracksUrl else {
+            completion(.failure(.badURL("Couldn't create Track URL")))
+            return
+        }
+        
+        URLSession.shared.dataTask(with: url) { (dat, _, err) in
+            if let error = err {
+                completion(.failure(.badDataTask(error.localizedDescription)))
+                return
+            }
+            
+            if let data = dat {
+                do {
+                    let response = try JSONDecoder().decode(TrackResults.self, from: data)
+                    let tracks = response.trackResults.trackMatches.tracks
+                    completion(.success(tracks))
+                } catch {
+                    completion(.failure(.badDataTask(error.localizedDescription)))
+                    return
+                }
+            }
+        }.resume()
+    } // END getArtist func
 }

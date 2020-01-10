@@ -69,8 +69,17 @@ extension ViewModel {
         }
     }
     
-    func getTracks(for id: Int) {
-        //LastFM.getTracks
+    func getTracks(_ search: String) {
+        
+        LastFM.getTrack(for: search) { [weak self] result in
+            switch result {
+            case .success(let tracks):
+                self?.tracks = tracks
+                print("Track count: \(tracks.count)")
+            case .failure(let error):
+                print("Last FM error (Tracks): \(error.localizedDescription)")
+            }
+        }
     }
     
 
