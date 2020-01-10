@@ -13,8 +13,6 @@ protocol ViewModelDelegate: class {
     func update()
 }
 
-//TODO: Track, album, and artist delegates?
-
 class ViewModel {
     
     weak var delegate: ViewModelDelegate?
@@ -25,7 +23,17 @@ class ViewModel {
         }
     }
     
-    //TODO: songs var and currentAlbum, currentSong, currentArtist
+    var artists = [Artist]() {
+        didSet {
+            delegate?.update()
+        }
+    }
+    
+    var tracks = [Track]() {
+        didSet {
+            delegate?.update()
+        }
+    }
 }
 
 extension ViewModel {

@@ -1,5 +1,5 @@
 //
-//  SongTableCell.swift
+//  TrackTableCell.swift
 //  LastFMSearch
 //
 //  Created by Consultant on 1/8/20.
@@ -15,7 +15,7 @@ class TrackTableCell: UITableViewCell {
     @IBOutlet weak var nameLabel: UILabel!
     @IBOutlet weak var artistLabel: UILabel!
     
-    static let identifier = "SongTableCell"
+    static let identifier = "TrackTableCell"
     
     override func awakeFromNib() {
         super.awakeFromNib()

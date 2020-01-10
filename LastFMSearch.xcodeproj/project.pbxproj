@@ -26,11 +26,11 @@
 		0251402F23C61C7D00054BA0 /* ArtistTableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0251402D23C61C7D00054BA0 /* ArtistTableCell.swift */; };
 		0251403023C61C7D00054BA0 /* ArtistTableCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = 0251402E23C61C7D00054BA0 /* ArtistTableCell.xib */; };
 		0251403223C61CD200054BA0 /* LastFMService.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0251403123C61CD200054BA0 /* LastFMService.swift */; };
-		0251403423C61CEE00054BA0 /* CoreManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0251403323C61CEE00054BA0 /* CoreManager.swift */; };
 		0251403623C638E700054BA0 /* AlbumViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0251403523C638E700054BA0 /* AlbumViewController.swift */; };
 		0251403823C6395B00054BA0 /* ArtistViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0251403723C6395B00054BA0 /* ArtistViewController.swift */; };
 		0251403A23C763E600054BA0 /* Track.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0251403923C763E600054BA0 /* Track.swift */; };
 		0251403C23C8276200054BA0 /* APIKey_DONOTPUSH.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0251403B23C8276200054BA0 /* APIKey_DONOTPUSH.swift */; };
+		0251403E23C83B0400054BA0 /* URL+Extension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0251403D23C83B0400054BA0 /* URL+Extension.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -67,11 +67,11 @@
 		0251402D23C61C7D00054BA0 /* ArtistTableCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistTableCell.swift; sourceTree = "<group>"; };
 		0251402E23C61C7D00054BA0 /* ArtistTableCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = ArtistTableCell.xib; sourceTree = "<group>"; };
 		0251403123C61CD200054BA0 /* LastFMService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LastFMService.swift; sourceTree = "<group>"; };
-		0251403323C61CEE00054BA0 /* CoreManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CoreManager.swift; sourceTree = "<group>"; };
 		0251403523C638E700054BA0 /* AlbumViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AlbumViewController.swift; sourceTree = "<group>"; };
 		0251403723C6395B00054BA0 /* ArtistViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ArtistViewController.swift; sourceTree = "<group>"; };
 		0251403923C763E600054BA0 /* Track.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Track.swift; sourceTree = "<group>"; };
 		0251403B23C8276200054BA0 /* APIKey_DONOTPUSH.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = APIKey_DONOTPUSH.swift; sourceTree = "<group>"; };
+		0251403D23C83B0400054BA0 /* URL+Extension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "URL+Extension.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -139,6 +139,7 @@
 		0251401023C6165300054BA0 /* Extensions */ = {
 			isa = PBXGroup;
 			children = (
+				0251403D23C83B0400054BA0 /* URL+Extension.swift */,
 			);
 			path = Extensions;
 			sourceTree = "<group>";
@@ -148,7 +149,6 @@
 			children = (
 				0251401D23C61A0300054BA0 /* APIManager.swift */,
 				0251403123C61CD200054BA0 /* LastFMService.swift */,
-				0251403323C61CEE00054BA0 /* CoreManager.swift */,
 				0251403B23C8276200054BA0 /* APIKey_DONOTPUSH.swift */,
 			);
 			path = Services;
@@ -311,7 +311,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				0251403C23C8276200054BA0 /* APIKey_DONOTPUSH.swift in Sources */,
-				0251403423C61CEE00054BA0 /* CoreManager.swift in Sources */,
 				0251402B23C61C6B00054BA0 /* AlbumTableCell.swift in Sources */,
 				0251401E23C61A0300054BA0 /* APIManager.swift in Sources */,
 				0251402023C61BE600054BA0 /* ViewModel.swift in Sources */,
@@ -321,6 +320,7 @@
 				02513FF623C6162B00054BA0 /* LastFMSearch.xcdatamodeld in Sources */,
 				02513FEE23C6162B00054BA0 /* SceneDelegate.swift in Sources */,
 				0251401823C6191200054BA0 /* Album.swift in Sources */,
+				0251403E23C83B0400054BA0 /* URL+Extension.swift in Sources */,
 				0251403823C6395B00054BA0 /* ArtistViewController.swift in Sources */,
 				0251403A23C763E600054BA0 /* Track.swift in Sources */,
 				0251403223C61CD200054BA0 /* LastFMService.swift in Sources */,

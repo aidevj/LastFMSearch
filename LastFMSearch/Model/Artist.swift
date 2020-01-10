@@ -40,7 +40,7 @@ class Artist: Decodable {
     
     let name: String
     let url: String
-    let image: [Image]
+    let image: Image
     let mbid: String    // ID Assigned by Last FM
 }
 

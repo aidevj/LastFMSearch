@@ -18,7 +18,21 @@ class AlbumTableCell: UITableViewCell {
     
     static let identifier = "AlbumTableCell"
     
-    //var album = Album!
+    // Setting values for display here
+    var album: Album! {
+        didSet {
+            titleLabel.text = album.name
+            artistLabel.text = album.artist
+            //tracksLabel.text = "\()"
+            guard let albumImageUrl = URL(string: album.image.url) else { return }
+            
+            albumImageUrl.getImage { [ weak self ] img in
+                if let image = img {
+                    self?.albumImageView.image = image
+                }
+            }
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()

@@ -40,9 +40,7 @@ struct APIManager {
     
     //MARK: - Initializer
     
-    init(_ name: String? = nil, _ id: Int? = nil, _ search: String? = nil) {
-        self.albumName = name
-        self.albumID = id
+    init(_ search: String? = nil) {
         self.search = search
     }
     

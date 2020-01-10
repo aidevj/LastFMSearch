@@ -16,6 +16,7 @@ class MainViewController: UIViewController {
     
     //MARK: - Properties
     let viewModel = ViewModel()
+    
     //TODO: search controller
     
     //MARK: - App Life Cycle Functionality
@@ -28,32 +29,58 @@ class MainViewController: UIViewController {
     // Helper function for setting up the main table
     private func setUpTable() {
         mainTableView.register(UINib(nibName: AlbumTableCell.identifier, bundle: Bundle.main), forCellReuseIdentifier: AlbumTableCell.identifier)
+        mainTableView.register(UINib(nibName: ArtistTableCell.identifier, bundle: Bundle.main), forCellReuseIdentifier: ArtistTableCell.identifier)
+        mainTableView.register(UINib(nibName: TrackTableCell.identifier, bundle: Bundle.main), forCellReuseIdentifier: TrackTableCell.identifier)
         
-        //TODO: Register other table cells for songs and artists
+        
+        //TODO: Search controller setup
         mainTableView.tableFooterView = UIView(frame: .zero)
         mainTableView.backgroundColor = .white
         
-        // Set ViewModel Delegate
         viewModel.delegate = self
     }
-    
-    //MARK: - Functionality
-
 
 }
 
 //MARK: Main Table View Extension
+    // Case 0 - Albums
+    // Case 1 - Artists
+    // Case 2 - Tracks
 extension MainViewController: UITableViewDataSource {
+    
+    // Set up 3 sections
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 3
+    }
+    
+    // Set up rows in each section
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        //return viewModel.albums.count
-        return 5    // temp test
+        switch section {
+        case 0:
+            return viewModel.albums.count
+        case 1:
+            return viewModel.artists.count
+        case 2:
+            return viewModel.tracks.count
+        default:
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: AlbumTableCell.identifier, for: indexPath) as! AlbumTableCell
-//        let album = viewModel.albums[indexPath.row]
-//        cell.album = album
-        return cell
+        switch indexPath.section {
+        case 0:
+            let cell = tableView.dequeueReusableCell(withIdentifier: AlbumTableCell.identifier, for: indexPath) as! AlbumTableCell
+            let album = viewModel.albums[indexPath.row]
+            cell.album = album
+            return cell
+        case 1:
+            return UITableViewCell.init()           //TODO
+        case 2:
+            return UITableViewCell.init()           //TODO
+        default:
+            return UITableViewCell.init()           //TODO
+        }
     }
     
 }

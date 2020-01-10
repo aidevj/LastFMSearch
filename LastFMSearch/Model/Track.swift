@@ -41,6 +41,6 @@ class Track: Decodable {
     let name: String
     let artist: String
     let url: String
-    let image: [Image]
+    let image: Image
     let mbid: String    // ID assigned by Last FM
 }
