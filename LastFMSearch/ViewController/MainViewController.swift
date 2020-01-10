@@ -16,14 +16,22 @@ class MainViewController: UIViewController {
     
     //MARK: - Properties
     let viewModel = ViewModel()
-//    let searchController = UISearchController(searchResultsController: nil)
+    let searchController = UISearchController(searchResultsController: nil)
+    
+    var filteredAlbums = [Albums]()
+    var filteredArtists = [Artist]()
+    var filteredTracks = [Track]()
+    
+    var isFiltering: Bool {
+        return !searchController.searchBar.text!.isEmpty && searchController.isActive   // for update with typing
+    }
     
     //MARK: - App Life Cycle Functionality
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setUpTable()
-//        setUpSearch()
+        setUpSearch()
     }
     
     // Helper function for setting up the main table
@@ -38,17 +46,21 @@ class MainViewController: UIViewController {
         viewModel.delegate = self
         
         // MANUAL TEST:
-        viewModel.getAlbums("Believe")
-        viewModel.getArtists("Cher")
-        viewModel.getTracks("Believe")
+//        viewModel.getAlbums("Believe")
+//        viewModel.getArtists("Cher")
+//        viewModel.getTracks("Believe")
     }
     
     // Helper function to set up Search Controller
     private func setUpSearch() {
-//        searchController.obscuresBackgroundDuringPresentation = false
-//        searchController.searchBar.delegate = self
-//        navigationItem.hidesSearchBarWhenScrolling = false
-//        navigationItem.searchController = searchController
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.searchBar.delegate = self
+        navigationItem.hidesSearchBarWhenScrolling = false
+        navigationItem.searchController = searchController
+    }
+    
+    private func filter(with search: String) {
+        
     }
 
 }
@@ -159,12 +171,19 @@ extension MainViewController: ViewModelDelegate {
 }
 
 //MARK: - Search Bar Delegate
-extension MainViewController: UISearchBarDelegate {
+extension MainViewController: UISearchBarDelegate, UISearchResultsUpdating {
     
     func searchBarSearchButtonClicked(_ searchBar: UISearchBar) {
         guard let search = searchBar.text,
             let sanitized = search.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else { return }
         
-//        viewModel.getAlbums(sanitized)
+        viewModel.getAlbums(sanitized)
+        viewModel.getArtists(sanitized)
+        viewModel.getTracks(sanitized)
     }
+    
+        func updateSearchResults(for searchController: UISearchController) {
+            guard let search = searchController.searchBar.text else { return }
+    //        filter(with: search)
+        }
 }

@@ -26,7 +26,7 @@ class DetailsViewController: UIViewController {
     
     //Helper function
     private func setupDetails() {
-        
+        title = "Information"
         viewModel.detailsDelegate = self
         
         detailsTableView.register(UINib(nibName: DetailsTableCell.identifier, bundle: Bundle.main), forCellReuseIdentifier: DetailsTableCell.identifier)
@@ -49,13 +49,13 @@ extension DetailsViewController: UITableViewDataSource {
         
         cell.detailTitle.text = selectedAlbum?.name
         cell.detailLink.text = selectedAlbum?.url
-        if let detailImageUrl = URL(string: (selectedAlbum?.image[0].url)!) {
-            detailImageUrl.getImage { img in
-                if let image = img {
-                    cell.detailImage.image = image
-                }
-            }
-        }
+//        if let detailImageUrl = URL(string: (selectedAlbum?.image[0].url)!) { // bad
+//            detailImageUrl.getImage { img in
+//                if let image = img {
+//                    cell.detailImage.image = image
+//                }
+//            }
+//        }
         return cell
     }
     
@@ -82,3 +82,5 @@ extension DetailsViewController: DetailsDelegate {
         }
     }
 }
+
+
