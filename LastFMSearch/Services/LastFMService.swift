@@ -28,6 +28,7 @@ final class LastFMService {
     static let shared = LastFMService()
     private init() {}
     
+    //MARK: - Get Album URL Session
     func getAlbum(for search: String, completion: @escaping AlbumHandler) {
         guard let url = APIManager(search).albumsUrl else {
             completion(.failure(.badURL("Couldn't create Album URL")))
@@ -53,4 +54,35 @@ final class LastFMService {
         }.resume()
     } // END getAlbum func
   
+    //MARK: - Get Artists URL Session
+    
+    func getArtist(for search: String, completion: @escaping ArtistHandler) {
+        guard let url = APIManager(search).artistsUrl else {
+            completion(.failure(.badURL("Couldn't create Artist URL")))
+            return
+        }
+        
+        URLSession.shared.dataTask(with: url) { (dat, _, err) in
+            if let error = err {
+                completion(.failure(.badDataTask(error.localizedDescription)))
+                return
+            }
+            
+            if let data = dat {
+                do {
+                    let response = try JSONDecoder().decode(ArtistResults.self, from: data)
+                    let artists = response.artistResults.artistMatches.artists
+                    completion(.success(artists))
+                } catch {
+                    completion(.failure(.badDataTask(error.localizedDescription)))
+                    return
+                }
+            }
+        }.resume()
+    } // END getArtist func
+    
+    
+    //MARK: - Get Tracks URL Session
+    
+    //TODO
 }

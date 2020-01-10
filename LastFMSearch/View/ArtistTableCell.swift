@@ -12,9 +12,16 @@ class ArtistTableCell: UITableViewCell {
     
     //MARK: - IBOutlets
     @IBOutlet weak var nameLabel: UILabel!
-    @IBOutlet weak var albumsLabel: UILabel!    // number of albums associated with artist
+    @IBOutlet weak var numAlbumsLabel: UILabel!    // number of albums associated with artist
     
     static let identifier = "ArtistTableCell"
+    
+    var artist: Artist! {
+        didSet {
+            nameLabel.text = artist.name
+            //numAlbumsLabel.text = artist.
+        }
+    }
     
     override func awakeFromNib() {
         super.awakeFromNib()

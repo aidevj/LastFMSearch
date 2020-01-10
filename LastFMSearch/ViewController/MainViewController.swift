@@ -29,8 +29,8 @@ class MainViewController: UIViewController {
     // Helper function for setting up the main table
     private func setUpTable() {
         mainTableView.register(UINib(nibName: AlbumTableCell.identifier, bundle: Bundle.main), forCellReuseIdentifier: AlbumTableCell.identifier)
-//        mainTableView.register(UINib(nibName: ArtistTableCell.identifier, bundle: Bundle.main), forCellReuseIdentifier: ArtistTableCell.identifier)
-//        mainTableView.register(UINib(nibName: TrackTableCell.identifier, bundle: Bundle.main), forCellReuseIdentifier: TrackTableCell.identifier)
+        mainTableView.register(UINib(nibName: ArtistTableCell.identifier, bundle: Bundle.main), forCellReuseIdentifier: ArtistTableCell.identifier)
+        mainTableView.register(UINib(nibName: TrackTableCell.identifier, bundle: Bundle.main), forCellReuseIdentifier: TrackTableCell.identifier)
         
         mainTableView.tableFooterView = UIView(frame: .zero)
         mainTableView.backgroundColor = .white
@@ -38,7 +38,9 @@ class MainViewController: UIViewController {
         viewModel.delegate = self
         
         // MANUAL TEST:
-        viewModel.getAlbums("Believe")
+        //viewModel.getAlbums("Believe")
+        viewModel.getArtists("Cher")
+        //viewModel.getAlbums("Believe")
     }
     
     // Helper function to set up Search Controller
@@ -58,13 +60,13 @@ class MainViewController: UIViewController {
 extension MainViewController: UITableViewDataSource {
     
     // Set up 3 sections
-//    func numberOfSections(in tableView: UITableView) -> Int {
-//        return 3
-//    }
+    func numberOfSections(in tableView: UITableView) -> Int {
+        return 3
+    }
     
     // Set up rows in each section
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.albums.count
+        return viewModel.artists.count
 //        switch section {
 //        case 0:
 //            return viewModel.albums.count
@@ -78,9 +80,9 @@ extension MainViewController: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: AlbumTableCell.identifier, for: indexPath) as! AlbumTableCell
-        let album = viewModel.albums[indexPath.row]
-        cell.album = album
+        let cell = tableView.dequeueReusableCell(withIdentifier: ArtistTableCell.identifier, for: indexPath) as! ArtistTableCell
+        let artist = viewModel.artists[indexPath.row]
+        cell.artist = artist
         return cell
 //        switch indexPath.section {
 //        case 0:
@@ -108,9 +110,10 @@ extension MainViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         tableView.deselectRow(at: indexPath, animated: true)
         
-        let album = viewModel.albums[indexPath.row]
+//        let album = viewModel.albums[indexPath.row]
+//        let artist = viewModel.artists[indexPath.row]
         
-        viewModel.currentAlbum = album
+//        viewModel.currentAlbum = album
 //        let albumVC = storyboard?.instantiateViewController(withIdentifier: "AlbumViewController") as! AlbumViewController
 //        albumVC.viewModel = viewModel
 //        albumVC.hidesBottomBarWhenPushed = true

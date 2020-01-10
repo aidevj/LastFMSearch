@@ -44,8 +44,8 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
-                <outlet property="albumsLabel" destination="08a-qh-bsh" id="jlC-uQ-btK"/>
                 <outlet property="nameLabel" destination="mRJ-Uk-qrW" id="FPe-v9-nu2"/>
+                <outlet property="numAlbumsLabel" destination="08a-qh-bsh" id="jlC-uQ-btK"/>
             </connections>
             <point key="canvasLocation" x="137.68115942028987" y="124.21875"/>
         </tableViewCell>

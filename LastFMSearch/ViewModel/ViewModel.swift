@@ -51,7 +51,20 @@ extension ViewModel {
                 self?.albums = albums
                 print("Album count: \(albums.count)")
             case .failure(let error):
-                print("Last FM error: \(error.localizedDescription)")       // THIS IS HAPPENING
+                print("Last FM error (Albums): \(error.localizedDescription)")
+            }
+        }
+    }
+    
+    func getArtists(_ search: String) {
+        
+        LastFM.getArtist(for: search) { [weak self] result in
+             switch result {
+             case .success(let artists):
+                self?.artists = artists
+                print("Artist count: \(artists.count)")
+             case .failure(let error):
+                print("Last FM error (Artists): \(error.localizedDescription)")
             }
         }
     }
@@ -59,4 +72,6 @@ extension ViewModel {
     func getTracks(for id: Int) {
         //LastFM.getTracks
     }
+    
+
 }
