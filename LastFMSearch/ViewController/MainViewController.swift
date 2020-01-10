@@ -18,10 +18,6 @@ class MainViewController: UIViewController {
     let viewModel = ViewModel()
     let searchController = UISearchController(searchResultsController: nil)
     
-    var filteredAlbums = [Albums]()
-    var filteredArtists = [Artist]()
-    var filteredTracks = [Track]()
-    
     var isFiltering: Bool {
         return !searchController.searchBar.text!.isEmpty && searchController.isActive   // for update with typing
     }
@@ -60,7 +56,13 @@ class MainViewController: UIViewController {
     }
     
     private func filter(with search: String) {
+        viewModel.filteredAlbums = []
+        viewModel.filteredArtists = []
+        viewModel.filteredTracks = []
         
+//        viewModel.filteredAlbums = viewModel.albums({
+//
+//        })
     }
 
 }
@@ -182,8 +184,12 @@ extension MainViewController: UISearchBarDelegate, UISearchResultsUpdating {
         viewModel.getTracks(sanitized)
     }
     
-        func updateSearchResults(for searchController: UISearchController) {
-            guard let search = searchController.searchBar.text else { return }
-    //        filter(with: search)
-        }
+    func updateSearchResults(for searchController: UISearchController) {
+        guard let search = searchController.searchBar.text,
+            let sanitized = search.addingPercentEncoding(withAllowedCharacters: .urlHostAllowed) else { return }
+        
+        viewModel.getAlbums(sanitized)
+        viewModel.getArtists(sanitized)
+        viewModel.getTracks(sanitized)
+    }
 }

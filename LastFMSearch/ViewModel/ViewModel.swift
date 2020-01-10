@@ -46,9 +46,14 @@ class ViewModel {
         }
     }
     
+    
     var currentArtist: Artist!
     
     var currentTrack: Track!
+    
+    var filteredAlbums = [Album]()
+    var filteredArtists = [Artist]()
+    var filteredTracks = [Track]()
 }
 
 extension ViewModel {
