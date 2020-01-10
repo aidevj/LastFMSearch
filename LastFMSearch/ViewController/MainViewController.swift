@@ -38,8 +38,8 @@ class MainViewController: UIViewController {
         viewModel.delegate = self
         
         // MANUAL TEST:
-        //viewModel.getAlbums("Believe")
-        //viewModel.getArtists("Cher")
+        viewModel.getAlbums("Believe")
+        viewModel.getArtists("Cher")
         viewModel.getTracks("Believe")
     }
     
@@ -66,37 +66,53 @@ extension MainViewController: UITableViewDataSource {
     
     // Set up rows in each section
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return viewModel.tracks.count
-//        switch section {
-//        case 0:
-//            return viewModel.albums.count
-//        case 1:
-//            return viewModel.artists.count
-//        case 2:
-//            return viewModel.tracks.count
-//        default:
-//            return 0
-//        }
+        switch section {
+        case 0:
+            return viewModel.albums.count
+        case 1:
+            return viewModel.artists.count
+        case 2:
+            return viewModel.tracks.count
+        default:
+            return 0
+        }
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: TrackTableCell.identifier, for: indexPath) as! TrackTableCell
-        let track = viewModel.tracks[indexPath.row]
-        cell.track = track
-        return cell
-//        switch indexPath.section {
-//        case 0:
-//            let cell = tableView.dequeueReusableCell(withIdentifier: AlbumTableCell.identifier, for: indexPath) as! AlbumTableCell
-//            let album = viewModel.albums[indexPath.row]
-//            cell.album = album
-//            return cell
-//        case 1:
-//            return UITableViewCell.init()           //TODO
-//        case 2:
-//            return UITableViewCell.init()           //TODO
-//        default:
-//            return UITableViewCell.init()           //TODO
-//        }
+        
+        switch indexPath.section {
+        case 0:
+            let cell = tableView.dequeueReusableCell(withIdentifier: AlbumTableCell.identifier, for: indexPath) as! AlbumTableCell
+            let album = viewModel.albums[indexPath.row]
+            cell.album = album
+            return cell
+        case 1:
+            let cell = tableView.dequeueReusableCell(withIdentifier: ArtistTableCell.identifier, for: indexPath) as! ArtistTableCell
+            let artist = viewModel.artists[indexPath.row]
+            cell.artist = artist
+            return cell
+        case 2:
+            let cell = tableView.dequeueReusableCell(withIdentifier: TrackTableCell.identifier, for: indexPath) as! TrackTableCell
+            let track = viewModel.tracks[indexPath.row]
+            cell.track = track
+            return cell
+        default:
+            return UITableViewCell.init()
+        }
+    }
+    
+    // Section headers
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        switch section {
+        case 0:
+            return "Albums"
+        case 1:
+            return "Artists"
+        case 2:
+            return "Tracks"
+        default:
+            return ""
+        }
     }
     
 }
