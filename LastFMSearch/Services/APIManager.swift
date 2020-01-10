@@ -27,8 +27,7 @@ struct APIManager {
     let apiLookup = "&api_key="
     let format = "&format=json"
     
-//    var search: String!     // user's search query
-    var search = "believe"  // test
+    var search: String!     // user's search query
     
     var albumName: String!
     var albumID: Int!       // CHECK JSON for type
@@ -42,14 +41,12 @@ struct APIManager {
     //MARK: - Initializer
     
     init(_ search: String? = nil) {
-//        self.search = search
-        self.search = search!
+        self.search = search
     }
     
     // MARK: - URLS
     
     var albumsUrl: URL? {
-        //guard let search =  // don't need since allowed nil in init
         return URL(string: root + searchAlbum + search + apiLookup + key + format)
     }
     

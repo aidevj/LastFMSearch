@@ -41,7 +41,7 @@ class Album: Decodable {
     let name: String
     let artist: String  // maybe use class Artist instead???
     let url: String
-    let image: [Image]                  // SOURCE OF ERROR!!! IMAGE IS PARSED WRONG
+    let image: [Image]
     let mbid: String    //! ID assigned by Last FM
 }
 

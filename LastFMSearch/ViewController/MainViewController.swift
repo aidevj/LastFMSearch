@@ -64,7 +64,6 @@ extension MainViewController: UITableViewDataSource {
     
     // Set up rows in each section
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-//        return 5        // BUG: not properly getting viewmodel.album count (nothing showing, returning 0?)
         return viewModel.albums.count
 //        switch section {
 //        case 0:
